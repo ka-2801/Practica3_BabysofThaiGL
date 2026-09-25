@@ -1,0 +1,423 @@
+:root {
+
+  /* --- Tipografias ---------------------------------------- */
+  --fuente-titulos: "Gill Sans", serif;      /* cambia titulos */
+  --fuente-texto:   "Gill Sans", sans-serif; /* cambia texto normal */
+
+  /* --- Color del header y del titulo principal -------- */
+  --color-header-fondo: #d17a9c;
+  --color-header-texto: #ffffff;
+
+  /* --- Color de la barra de navegacion principal ----------- */
+  --color-nav-fondo:      #f3c6d6;
+  --color-nav-texto:      #5a2a3a;
+  --color-nav-texto-hover:#ffffff;
+  --color-nav-hover-fondo:#d17a9c;
+
+  /* --- Fondo de cada seccion (uno por seccion) ------------- */
+  --fondo-inicio:    #fff6f9;
+  --fondo-thaigl:    #fbe6ee;
+  --fondo-thebabys:  #fffdfb;
+  --fondo-hablemos:  #fbe6ee;
+
+  /* --- Titulos (h2) dentro de cada sección ---- */
+  --color-titulo-h2: #b5476b;
+  --color-titulo-h3: #a03e5e;
+
+  /* --- Color de texto general y acentos --------------------- */
+  --color-texto:     #4a3a40;
+  --color-acento:    #d17a9c;   /* corazones, bordes, botón enviar */
+  --color-tarjeta:   #e7cdd6;   /* fondo de "tarjetas" (redes sociales, etc.) */
+  --color-borde:     #331620;
+
+  --radio-borde: 16px;
+}
+
+
+/* ---------------------------------------------------------
+   2. BASE
+   --------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  color: var(--color-texto);
+  background-color: #fffaf9;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-titulos);
+  margin: 0 0 .5em 0;
+}
+
+/* ---------------------------------------------------------
+   3. HEADER 
+   --------------------------------------------------------- */
+.header {
+  background-color: var(--color-header-fondo);
+  color: var(--color-header-texto);
+  text-align: center;
+  padding: 2.2em 1em;
+}
+
+.header h1 {
+  color: var(--color-header-texto);
+  font-size: 2.6rem;
+  letter-spacing: 1px;
+}
+
+/* ---------------------------------------------------------
+   4. NAV principal 
+   --------------------------------------------------------- */
+.nav {
+  background-color: var(--color-nav-fondo);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav a {
+  display: block;
+  padding: 1em 1.4em;
+  color: var(--color-nav-texto);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color .25s ease, color .25s ease;
+}
+
+.nav a:hover,
+.nav a:focus {
+  background-color: var(--color-nav-hover-fondo);
+  color: var(--color-nav-texto-hover);
+}
+
+/* ---------------------------------------------------------
+   5. SECCIONES GENERALES 
+   --------------------------------------------------------- */
+.seccion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2em;
+  padding: 3.5em 8%;
+  scroll-margin-top: 70px; /* para que el anchor no quede tapado por el nav sticky */
+}
+
+#inicio    { background-color: var(--fondo-inicio); }
+#thaigl    { background-color: var(--fondo-thaigl); }
+#thebabys  { background-color: var(--fondo-thebabys); flex-direction: column; }
+#hablemos  { background-color: var(--fondo-hablemos); flex-direction: column; text-align: center; }
+
+.seccion > img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.12);
+  margin: 0 auto;
+}
+
+.seccion > p {
+  flex: 1 1 320px;
+  max-width: 65ch;
+}
+
+/* Titulo por seccion */
+#thebabys h2,
+.seccion h2 {
+  width: 100%;
+  color: var(--color-titulo-h2);
+  text-align: center;
+  font-size: 1.8rem;
+  margin-top: .6em;
+}
+
+#hablemos h3 {
+  color: var(--color-titulo-h3);
+}
+
+/* ---------------------------------------------------------
+   6. PAREJAS 
+   --------------------------------------------------------- */
+.familias li {
+  list-style: none;
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: 999px;
+  padding: .6em 1.3em;
+  font-weight: 500;
+  color: var(--color-texto);
+  box-shadow: 0 2px 6px rgba(0,0,0,.05);
+  text-align: center;
+  margin-top: .5em;
+}
+
+/* ---------------------------------------------------------
+   7. NAV DE HIJAS 
+   --------------------------------------------------------- */
+.nav-hijas {
+  background-color: transparent;
+  padding: 2em 8% 0;
+  margin-bottom: 2.5em; 
+}
+
+.nav-hijas ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-hijas a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5em;
+  text-decoration: none;
+  color: var(--color-texto);
+  font-weight: 700;
+  transition: transform .2s ease;
+}
+
+.nav-hijas a:hover {
+  transform: translateY(-4px);
+  color: var(--color-acento);
+}
+
+.nav-hijas .icono-nav {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-acento);
+}
+
+/* ---------------------------------------------------------
+   8. THE BABY'S
+   --------------------------------------------------------- */
+#thebabys img[width="200"] {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 14px rgba(0,0,0,.12);
+  margin: 2.5em auto 0;
+}
+
+#thebabys img[width="100"] {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-acento);
+  margin: 0;             
+}
+
+/* Red social */
+.redes-sociales {
+  display: inline-flex;
+  align-items: center;
+  gap: .5em;
+  vertical-align: middle;
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--color-borde);
+  border-radius: 999px;
+  padding: .5em 1em;
+  margin: .4em;
+}
+
+.redes-sociales i {
+  color: var(--color-acento);
+  font-size: 1.1rem;
+}
+
+.redes-sociales span {
+  font-size: .9rem;
+}
+/* Corazon decorativo */
+.redes-sociales::after {
+  content: "♡";
+  color: var(--color-acento);
+  margin-left: .3em;
+}
+
+/* Lista de series */
+#thebabys li {
+  list-style: none;
+  display: inline-block;
+  background-color: var(--color-tarjeta);
+  border: 1px dashed var(--color-borde);
+  border-radius: 8px;
+  padding: .4em 1em;
+  margin: .4em;
+  font-size: .9rem;
+}
+
+/* Separacion entre hijas */
+.hija {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 4em;      /* unico espacio */
+  scroll-margin-top: 80px; 
+}
+
+.hija:last-child {
+  margin-bottom: 0;
+}
+
+/* Mamas */
+.madres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1em;  
+}
+
+.madre {
+  display: flex;
+  align-items: center;
+  gap: .5em;
+}
+
+/* ---------------------------------------------------------
+   9. Formulario 
+   --------------------------------------------------------- */
+#hablemos  {
+  background-color: var(--fondo-hablemos);
+  flex-direction: column;
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  gap: .8em;
+}
+
+#hablemos > p,
+#thebabys > p {
+  flex: 0 1 auto;
+  max-width: 65ch;
+  margin: 0 auto;
+}
+
+#hablemos h3 {
+  color: var(--color-titulo-h3);
+  margin-bottom: .3em;
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "l-nombre  l-usuario"
+    "i-nombre  i-usuario"
+    "l-mensaje l-mensaje"
+    "i-mensaje i-mensaje"
+    "boton     boton";
+  gap: .3em 1.5em;
+  max-width: 560px;
+  margin: .8em auto 0;
+  text-align: left;
+}
+
+label[for="nombre"]  { grid-area: l-nombre; }
+#nombre               { grid-area: i-nombre; }
+label[for="usuario"] { grid-area: l-usuario; }
+#usuario              { grid-area: i-usuario; }
+label[for="mensaje"] { grid-area: l-mensaje; }
+#mensaje              { grid-area: i-mensaje; }
+button[type="submit"] { grid-area: boton; }
+
+.formulario label {
+  font-weight: 600;
+  font-size: .9rem;
+  margin-bottom: .1em;
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: .5em .9em;
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  background-color: var(--color-tarjeta);
+}
+
+.formulario textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.formulario button[type="submit"] {
+  justify-self: center;
+  margin-top: .3em;
+  padding: .6em 2.4em;
+  border: none;
+  border-radius: 999px;
+  background-color: var(--color-acento);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity .2s ease;
+}
+
+.formulario button[type="submit"]:hover {
+  opacity: .85;
+}
+
+
+/* ---------------------------------------------------------
+   10. FOOTER
+   --------------------------------------------------------- */
+.footer {
+  text-align: center;
+  padding: 1.5em 1em;
+  background-color: var(--color-header-fondo);
+  color: var(--color-header-texto);
+  font-size: .85rem;
+}
+
+/* ---------------------------------------------------------
+   11. RESPONSIVE
+   --------------------------------------------------------- */
+@media (max-width: 640px) {
+  .seccion {
+    padding: 2.5em 6%;
+  }
+
+  .formulario {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "l-nombre"
+      "i-nombre"
+      "l-usuario"
+      "i-usuario"
+      "l-mensaje"
+      "i-mensaje"
+      "boton";
+  }
+}
