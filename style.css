@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Gill+Sans+MT&display=swap');
+
 :root {
 
   /* --- Tipografias ---------------------------------------- */
-  --fuente-titulos: "Gill Sans", serif;      /* cambia titulos */
-  --fuente-texto:   "Gill Sans", sans-serif; /* cambia texto normal */
+  --fuente-titulos: "Comfortaa", sans-serif;   /* titulos */
+  --fuente-texto:   "Gill Sans", sans-serif; /* texto normal */
 
   /* --- Color del header y del titulo principal -------- */
   --color-header-fondo: #d17a9c;
@@ -26,8 +28,8 @@
 
   /* --- Color de texto general y acentos --------------------- */
   --color-texto:     #4a3a40;
-  --color-acento:    #d17a9c;   /* corazones, bordes, botón enviar */
-  --color-tarjeta:   #e7cdd6;   /* fondo de "tarjetas" (redes sociales, etc.) */
+  --color-acento:    #d17a9c;   /* corazones, bordes, boton enviar */
+  --color-tarjeta:   #e7cdd6;   /* fondo de "tarjetas"  */
   --color-borde:     #331620;
 
   --radio-borde: 16px;
@@ -56,7 +58,13 @@ img {
 
 h1, h2, h3 {
   font-family: var(--fuente-titulos);
+  font-weight: 600;
   margin: 0 0 .5em 0;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
 }
 
 /* ---------------------------------------------------------
@@ -118,7 +126,7 @@ h1, h2, h3 {
   align-items: center;
   gap: 2em;
   padding: 3.5em 8%;
-  scroll-margin-top: 70px; /* para que el anchor no quede tapado por el nav sticky */
+  scroll-margin-top: 70px; 
 }
 
 #inicio    { background-color: var(--fondo-inicio); }
