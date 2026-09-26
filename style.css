@@ -22,7 +22,7 @@
   --fondo-thebabys:  #fffdfb;
   --fondo-hablemos:  #fbe6ee;
 
-  /* --- Titulos (h2) dentro de cada sección ---- */
+  /* --- Titulos (h2) dentro de cada seccion ---- */
   --color-titulo-h2: #b5476b;
   --color-titulo-h3: #a03e5e;
 
@@ -222,7 +222,7 @@ h1 {
 }
 
 /* ---------------------------------------------------------
-   8. THE BABY'S
+   8. THE BABYS
    --------------------------------------------------------- */
 #thebabys img[width="200"] {
   width: 200px;
@@ -263,7 +263,6 @@ h1 {
 .redes-sociales span {
   font-size: .9rem;
 }
-/* Corazon decorativo */
 .redes-sociales::after {
   content: "♡";
   color: var(--color-acento);
@@ -288,7 +287,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-bottom: 4em;      /* unico espacio */
+  margin-bottom: 4em;     
   scroll-margin-top: 80px; 
 }
 
@@ -302,10 +301,12 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1em;
-  margin-top: 1em;  
+  margin-top: 1em;
+  list-style: none;
+  padding: 0;
 }
 
-.madre {
+.madres li {
   display: flex;
   align-items: center;
   gap: .5em;
